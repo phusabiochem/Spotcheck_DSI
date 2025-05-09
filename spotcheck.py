@@ -153,7 +153,7 @@ PROGRAM_BUTTON_TXT_FONT = ('Helvetica', 10)
 LOGIN_LABEL_TXT_FONT = ('Helvetica', 15)
 LOGIN_BUTTON_TXT_FONT = ('Helvetica', 10)
 
-RESULT_CELL_START = 12
+RESULT_CELL_START = 14
 
 
 MainScreen_Language = {
@@ -4708,25 +4708,25 @@ class QuantitativeAnalysisFrame3(QualitativeAnalysisFrame3):
 				sheet["D"+str(i)].font = font0
 
 			img = Img(working_dir + "/logo.png")
-			img.height = 39
-			img.width = 215
+			# img.height = 39
+			# img.width = 215
 			img.anchor = 'B2'
 			sheet.add_image(img)
 
-			sheet["C10"] = self.base_window.quantitative_analysis_0.template_name
+			sheet["C" + str(RESULT_CELL_START-2)] = self.base_window.quantitative_analysis_0.template_name
 
-			sheet.merge_cells(start_row=5, start_column=2, end_row=5, end_column=7)
-			sheet["B5"] = Quantitative3_Language["Result Title Text"][language]
-			sheet["B5"].font = font1
-			sheet.cell(row=5,column=2).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
+			sheet.merge_cells(start_row=RESULT_CELL_START-7, start_column=2, end_row=RESULT_CELL_START-7, end_column=7)
+			sheet["B" + str(RESULT_CELL_START-7)] = Quantitative3_Language["Result Title Text"][language]
+			sheet["B" + str(RESULT_CELL_START-7)].font = font1
+			sheet.cell(row=RESULT_CELL_START-7, column=2).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
 			#global foldername
-			sheet["B7"] = Quantitative3_Language["Result ExperimentName Text"][language] + self.base_window.quantitative_analysis_1.program_name
-			sheet["B7"].font = font2
-			sheet['B8'] = Quantitative3_Language["Result TechnicianName Text"][language] + self.base_window.quantitative_analysis_0.user_name
-			sheet["B8"].font = font2
+			sheet["B" + str(RESULT_CELL_START-5)] = Quantitative3_Language["Result ExperimentName Text"][language] + self.base_window.quantitative_analysis_1.program_name
+			sheet["B" + str(RESULT_CELL_START-5)].font = font2
+			sheet['B' + str(RESULT_CELL_START-4)] = Quantitative3_Language["Result TechnicianName Text"][language] + self.base_window.quantitative_analysis_0.user_name
+			sheet["B" + str(RESULT_CELL_START-4)].font = font2
 			#global covid19dir_old
-			sheet['B9'] = Quantitative3_Language["Result Date Text"][language] + self.base_window.quantitative_analysis_0.create_time
-			sheet["B9"].font = font2
+			sheet['B' + str(RESULT_CELL_START-3)] = Quantitative3_Language["Result Date Text"][language] + self.base_window.quantitative_analysis_0.create_time
+			sheet["B" + str(RESULT_CELL_START-3)].font = font2
 			# ~ sheet['B60'] = 'Note:'
 			# ~ sheet["B60"].font = font2
 			# ~ sheet['B61'] = '+ N/A: No sample'
@@ -4734,20 +4734,21 @@ class QuantitativeAnalysisFrame3(QualitativeAnalysisFrame3):
 			# ~ sheet['C61'] = '+ P_L: Low copy'
 			# ~ sheet['C62'] = '+ P_H: Positive'
 
-			sheet.merge_cells(start_row=64, start_column=5, end_row=64, end_column=7)
-			sheet.merge_cells(start_row=65, start_column=5, end_row=65, end_column=7)
-			sheet['B64'] = Quantitative3_Language["Result TechnicianNameSign Text"][language]
-			sheet['B65'] = ''
-			sheet['E64'] = Quantitative3_Language["Result HeadOfDivisionSign Text"][language]
-			sheet['E65'] = ''
-			sheet["B64"].font = font2
-			sheet["E64"].font = font2
-			sheet["B64"].protection = Protection(locked=False, hidden=False)
-			sheet["E64"].protection = Protection(locked=False, hidden=False)
-			sheet.cell(row=64,column=2).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
-			sheet.cell(row=65,column=2).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
-			sheet.cell(row=64,column=5).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
-			sheet.cell(row=65,column=5).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
+			sheet.merge_cells(start_row=RESULT_CELL_START+52, start_column=5, end_row=RESULT_CELL_START+52, end_column=7)
+			sheet.merge_cells(start_row=RESULT_CELL_START+53, start_column=5, end_row=RESULT_CELL_START+53, end_column=7)
+
+			sheet['B' + str(RESULT_CELL_START+52)] = Quantitative3_Language["Result TechnicianNameSign Text"][language]
+			sheet['B' + str(RESULT_CELL_START+53)] = ''
+			sheet['E' + str(RESULT_CELL_START+52)] = Quantitative3_Language["Result HeadOfDivisionSign Text"][language]
+			sheet['E' + str(RESULT_CELL_START+53)] = ''
+			sheet["B" + str(RESULT_CELL_START+52)].font = font2
+			sheet["E" + str(RESULT_CELL_START+52)].font = font2
+			sheet["B" + str(RESULT_CELL_START+52)].protection = Protection(locked=False, hidden=False)
+			sheet["E" + str(RESULT_CELL_START+52)].protection = Protection(locked=False, hidden=False)
+			sheet.cell(row=RESULT_CELL_START+52,column=2).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
+			sheet.cell(row=RESULT_CELL_START+53,column=2).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
+			sheet.cell(row=RESULT_CELL_START+52,column=5).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
+			sheet.cell(row=RESULT_CELL_START+53,column=5).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
 
 			for r in range(RESULT_CELL_START - 1, RESULT_CELL_START + SC_VERSION):
 				for c in range(2,8):
@@ -4761,26 +4762,26 @@ class QuantitativeAnalysisFrame3(QualitativeAnalysisFrame3):
 			sheet.column_dimensions['F'].width = 9
 			sheet.column_dimensions['G'].width = 9
 
-			sheet.row_dimensions[11].height = 40
+			sheet.row_dimensions[RESULT_CELL_START-1].height = 40
 
-			sheet['B11'] = Quantitative3_Language["Result SampleName Text"][language]
-			sheet["B11"].font = font2
-			sheet["B11"].fill = PatternFill(start_color='00EFEFEF', end_color='00EFEFEF', fill_type='solid')
-			sheet['C11'] = Quantitative3_Language["Result SamplePosition Text"][language]
-			sheet["C11"].font = font2
-			sheet["C11"].fill = PatternFill(start_color='00EFEFEF', end_color='00EFEFEF', fill_type='solid')
-			sheet['D11'] = Quantitative3_Language["Result SCResult Text"][language]
-			sheet["D11"].font = font2
-			sheet["D11"].fill = PatternFill(start_color='00EFEFEF', end_color='00EFEFEF', fill_type='solid')
-			sheet['E11'] = Quantitative3_Language["Result CTResult Text"][language]
-			sheet["E11"].font = font2
-			sheet["E11"].fill = PatternFill(start_color='00EFEFEF', end_color='00EFEFEF', fill_type='solid')
-			sheet['F11'] = Quantitative3_Language["Result GelResult Text"][language]
-			sheet["F11"].font = font2
-			sheet["F11"].fill = PatternFill(start_color='00EFEFEF', end_color='00EFEFEF', fill_type='solid')
-			sheet['G11'] = Quantitative3_Language["Result FinalResult Text"][language]
-			sheet["G11"].font = font2
-			sheet["G11"].fill = PatternFill(start_color='00EFEFEF', end_color='00EFEFEF', fill_type='solid')
+			sheet['B' + str(RESULT_CELL_START-1)] = Quantitative3_Language["Result SampleName Text"][language]
+			sheet["B" + str(RESULT_CELL_START-1)].font = font2
+			sheet["B" + str(RESULT_CELL_START-1)].fill = PatternFill(start_color='00EFEFEF', end_color='00EFEFEF', fill_type='solid')
+			sheet["C" + str(RESULT_CELL_START-1)] = Quantitative3_Language["Result SamplePosition Text"][language]
+			sheet["C" + str(RESULT_CELL_START-1)].font = font2
+			sheet["C" + str(RESULT_CELL_START-1)].fill = PatternFill(start_color='00EFEFEF', end_color='00EFEFEF', fill_type='solid')
+			sheet["D" + str(RESULT_CELL_START-1)]  = Quantitative3_Language["Result SCResult Text"][language]
+			sheet["D" + str(RESULT_CELL_START-1)].font = font2
+			sheet["D" + str(RESULT_CELL_START-1)].fill = PatternFill(start_color='00EFEFEF', end_color='00EFEFEF', fill_type='solid')
+			sheet["E" + str(RESULT_CELL_START-1)] = Quantitative3_Language["Result CTResult Text"][language]
+			sheet["E" + str(RESULT_CELL_START-1)].font = font2
+			sheet["E" + str(RESULT_CELL_START-1)].fill = PatternFill(start_color='00EFEFEF', end_color='00EFEFEF', fill_type='solid')
+			sheet["F" + str(RESULT_CELL_START-1)] = Quantitative3_Language["Result GelResult Text"][language]
+			sheet["F" + str(RESULT_CELL_START-1)].font = font2
+			sheet["F" + str(RESULT_CELL_START-1)].fill = PatternFill(start_color='00EFEFEF', end_color='00EFEFEF', fill_type='solid')
+			sheet["G" + str(RESULT_CELL_START-1)] = Quantitative3_Language["Result FinalResult Text"][language]
+			sheet["G" + str(RESULT_CELL_START-1)].font = font2
+			sheet["G" + str(RESULT_CELL_START-1)].fill = PatternFill(start_color='00EFEFEF', end_color='00EFEFEF', fill_type='solid')
 
 			for r in range(0, WELL_ROW):
 				sheet['C' + str(r + RESULT_CELL_START)] = str(chr(65+r)) + '1'
@@ -5130,7 +5131,7 @@ class QuantitativeAnalysisFrame3(QualitativeAnalysisFrame3):
 		sheet = wb.active
 		subprocess.call(["scrot", self.base_window.quantitative_analysis_0.result_folder_path + "/result_capture.jpg"])
 		img = Img(self.base_window.quantitative_analysis_0.result_folder_path + "/result_capture.jpg")
-		img.anchor = 'I11'
+		img.anchor = 'I' + str(RESULT_CELL_START-1)
 		sheet.add_image(img)
 		wb.save(self.base_window.quantitative_analysis_0.result_folder_path + '/' + self.base_window.quantitative_analysis_0.experiment_name + '.xlsx')
 		wb.close()
@@ -9227,8 +9228,8 @@ class MainMenu(Frame):
 		
 	
 		self.screening_button = Button(self.work_frame,
-									text = MainScreen_Language["Screening Button"][language],
-									# ~ text = "ANALYSIS",
+									# text = MainScreen_Language["Screening Button"][language],
+									text = MainScreen_Language['Analysis Button'][language],
 									font = MAIN_MENU_BUTTON_FONT,
 									width = MAIN_MENU_BUTTON_WIDTH,
 									height = MAIN_MENU_BUTTON_HEIGHT,
@@ -9239,7 +9240,8 @@ class MainMenu(Frame):
 		self.screening_button.grid(row=0, column=0, ipadx=20, ipady=10, padx=100, pady=130)
 
 		self.quantitative_button = Button(self.work_frame,
-									text = MainScreen_Language["Quantitative Button"][language],
+									# text = MainScreen_Language["Quantitative Button"][language],
+									text = MainScreen_Language['Setting Button 2'][language],
 									font = MAIN_MENU_BUTTON_FONT,
 									width = MAIN_MENU_BUTTON_WIDTH,
 									height = MAIN_MENU_BUTTON_HEIGHT,
@@ -9315,8 +9317,10 @@ class MainMenu(Frame):
 			fw.writelines(["1\n"])
 			fw.close()
 		### Main Sceen ###
-		self.screening_button['text'] = MainScreen_Language['Screening Button'][language]
-		self.quantitative_button['text'] = MainScreen_Language['Quantitative Button'][language]
+		# self.screening_button['text'] = MainScreen_Language['Screening Button'][language]
+		# self.quantitative_button['text'] = MainScreen_Language['Quantitative Button'][language]
+		self.screening_button['text'] = MainScreen_Language['Analysis Button'][language]
+		self.quantitative_button['text'] = MainScreen_Language['Setting Button 2'][language]
 		self.view_result_button['text'] = MainScreen_Language['ViewResult Button'][language]
 		self.create_file_button['text'] = MainScreen_Language['CreateFile Button'][language]
 		self.connect_button['text'] = MainScreen_Language['Setting Button 1'][language]
@@ -9435,52 +9439,50 @@ class MainMenu(Frame):
 		self.base_window.system_check.title_label['text'] = SystemCheck_Language["Title Label"][language]
 
 	def screening_clicked(self):		
-		self.threshold_label_frame = LabelFrame(self.work_frame,
-											# ~ width = 600,
-											# ~ height = 300,
-											text = MainScreen_Language['Screening LabelFrame'][language],
-											bg = 'grey70')
-		self.threshold_label_frame.place(x=35, y=95)
+		self.analysis_clicked()
 
-		self.thr1_button = Button(self.threshold_label_frame,
-					text = MainScreen_Language['Environment Button'][language],
-					font = SWITCH_PAGE_BUTTON_FONT,
-					bg = SWITCH_PAGE_BUTTON_BGD_COLOR,
-					fg = SWITCH_PAGE_BUTTON_TXT_COLOR,
-					borderwidth = 0,
-					command = self.thr1_clicked)
-		self.thr1_button.pack(side=LEFT, padx=30, pady=50, ipady=10, ipadx=2)
+		###################################################################################################
+		# self.threshold_label_frame = LabelFrame(self.work_frame,
+		# 									# ~ width = 600,
+		# 									# ~ height = 300,
+		# 									text = MainScreen_Language['Screening LabelFrame'][language],
+		# 									bg = 'grey70')
+		# self.threshold_label_frame.place(x=35, y=95)
 
-		self.thr2_button = Button(self.threshold_label_frame,
-					text = MainScreen_Language['Host Button'][language],
-					font = SWITCH_PAGE_BUTTON_FONT,
-					bg = SWITCH_PAGE_BUTTON_BGD_COLOR,
-					fg = SWITCH_PAGE_BUTTON_TXT_COLOR,
-					borderwidth = 0,
-					command = self.thr2_clicked)
-		self.thr2_button.pack(side=LEFT, padx=30, pady=50, ipady=10, ipadx=21)
+		# self.thr1_button = Button(self.threshold_label_frame,
+		# 			text = MainScreen_Language['Environment Button'][language],
+		# 			font = SWITCH_PAGE_BUTTON_FONT,
+		# 			bg = SWITCH_PAGE_BUTTON_BGD_COLOR,
+		# 			fg = SWITCH_PAGE_BUTTON_TXT_COLOR,
+		# 			borderwidth = 0,
+		# 			command = self.thr1_clicked)
+		# self.thr1_button.pack(side=LEFT, padx=30, pady=50, ipady=10, ipadx=2)
+
+		# self.thr2_button = Button(self.threshold_label_frame,
+		# 			text = MainScreen_Language['Host Button'][language],
+		# 			font = SWITCH_PAGE_BUTTON_FONT,
+		# 			bg = SWITCH_PAGE_BUTTON_BGD_COLOR,
+		# 			fg = SWITCH_PAGE_BUTTON_TXT_COLOR,
+		# 			borderwidth = 0,
+		# 			command = self.thr2_clicked)
+		# self.thr2_button.pack(side=LEFT, padx=30, pady=50, ipady=10, ipadx=21)
 		
-		self.cancel_button = Button(self.threshold_label_frame,
-					text = "X",
-					font = SWITCH_PAGE_BUTTON_FONT,
-					width = 1,
-					height = 1,
-					bg = SWITCH_PAGE_BUTTON_BGD_COLOR,
-					fg = SWITCH_PAGE_BUTTON_TXT_COLOR,
-					borderwidth = 0,
-					command = self.cancel_clicked)
-		self.cancel_button.place(x=297,y=-18)
+		# self.cancel_button = Button(self.threshold_label_frame,
+		# 			text = "X",
+		# 			font = SWITCH_PAGE_BUTTON_FONT,
+		# 			width = 1,
+		# 			height = 1,
+		# 			bg = SWITCH_PAGE_BUTTON_BGD_COLOR,
+		# 			fg = SWITCH_PAGE_BUTTON_TXT_COLOR,
+		# 			borderwidth = 0,
+		# 			command = self.cancel_clicked)
+		# self.cancel_button.place(x=297,y=-18)
 		
-		self.quantitative_button['state'] = 'disabled'
-		self.view_result_button['state'] = 'disabled'
-		self.create_file_button['state'] = 'disabled'
-		self.connect_button['state'] = 'disabled'
-		# self.language_button['state'] = 'disable'
-	
-		# ~ self.base_window.forget_page()
-		# ~ #self.base_window.page_num = self.base_window.frame_list.index(self.base_window.qualitative_option)
-		# ~ self.base_window.page_num = self.base_window.frame_list.index(self.base_window.qualitative_analysis_0)
-		# ~ self.base_window.switch_page()
+		# self.quantitative_button['state'] = 'disabled'
+		# self.view_result_button['state'] = 'disabled'
+		# self.create_file_button['state'] = 'disabled'
+		# self.connect_button['state'] = 'disabled'
+		###################################################################################################
 		
 	def thr1_clicked(self):
 		self.threshold_label_frame.place_forget()
@@ -9602,51 +9604,56 @@ class MainMenu(Frame):
 	
 	
 	def quantitative_clicked(self):
-		self.quanti_labelframe = LabelFrame(self.work_frame,
-											text = MainScreen_Language['Quantitative LabelFrame'][language],
-											bg = 'grey70')
-		self.quanti_labelframe.place(x=380, y=95)
+		self.setting_clicked()
+
+		###################################################################################################
+		# self.quanti_labelframe = LabelFrame(self.work_frame,
+		# 									text = MainScreen_Language['Quantitative LabelFrame'][language],
+		# 									bg = 'grey70')
+		# self.quanti_labelframe.place(x=380, y=95)
 
 		
-		self.analysis_button = Button(self.quanti_labelframe,
-					text = MainScreen_Language['Analysis Button'][language],
-					font = SWITCH_PAGE_BUTTON_FONT,
-					bg = SWITCH_PAGE_BUTTON_BGD_COLOR,
-					fg = SWITCH_PAGE_BUTTON_TXT_COLOR,
-					borderwidth = 0,
-					command = self.analysis_clicked)
-		self.analysis_button.pack(side=LEFT, padx=30, pady=50, ipady=10, ipadx=20)
+		# self.analysis_button = Button(self.quanti_labelframe,
+		# 			text = MainScreen_Language['Analysis Button'][language],
+		# 			font = SWITCH_PAGE_BUTTON_FONT,
+		# 			bg = SWITCH_PAGE_BUTTON_BGD_COLOR,
+		# 			fg = SWITCH_PAGE_BUTTON_TXT_COLOR,
+		# 			borderwidth = 0,
+		# 			command = self.analysis_clicked)
+		# self.analysis_button.pack(side=LEFT, padx=30, pady=50, ipady=10, ipadx=20)
 
-		self.setting_button = Button(self.quanti_labelframe,
-					text = MainScreen_Language['Setting Button 2'][language],
-					font = SWITCH_PAGE_BUTTON_FONT,
-					bg = SWITCH_PAGE_BUTTON_BGD_COLOR,
-					fg = SWITCH_PAGE_BUTTON_TXT_COLOR,
-					borderwidth = 0,
-					command = self.setting_clicked)
-		self.setting_button.pack(side=LEFT, padx=30, pady=50, ipady=10, ipadx=21)
+		# self.setting_button = Button(self.quanti_labelframe,
+		# 			text = MainScreen_Language['Setting Button 2'][language],
+		# 			font = SWITCH_PAGE_BUTTON_FONT,
+		# 			bg = SWITCH_PAGE_BUTTON_BGD_COLOR,
+		# 			fg = SWITCH_PAGE_BUTTON_TXT_COLOR,
+		# 			borderwidth = 0,
+		# 			command = self.setting_clicked)
+		# self.setting_button.pack(side=LEFT, padx=30, pady=50, ipady=10, ipadx=21)
 		
-		self.cancel2_button = Button(self.quanti_labelframe,
-					text = "X",
-					font = SWITCH_PAGE_BUTTON_FONT,
-					width = 1,
-					height = 1,
-					bg = SWITCH_PAGE_BUTTON_BGD_COLOR,
-					fg = SWITCH_PAGE_BUTTON_TXT_COLOR,
-					borderwidth = 0,
-					command = self.cancel2_clicked)
-		self.cancel2_button.place(x=312,y=-18)
+		# self.cancel2_button = Button(self.quanti_labelframe,
+		# 			text = "X",
+		# 			font = SWITCH_PAGE_BUTTON_FONT,
+		# 			width = 1,
+		# 			height = 1,
+		# 			bg = SWITCH_PAGE_BUTTON_BGD_COLOR,
+		# 			fg = SWITCH_PAGE_BUTTON_TXT_COLOR,
+		# 			borderwidth = 0,
+		# 			command = self.cancel2_clicked)
+		# self.cancel2_button.place(x=312,y=-18)
 		
-		self.screening_button['state'] = 'disabled'
-		self.view_result_button['state'] = 'disabled'
-		self.create_file_button['state'] = 'disabled'
-		self.connect_button['state'] = 'disabled'
-		# self.language_button['state'] = 'disable'
-	
+		# self.screening_button['state'] = 'disabled'
+		# self.view_result_button['state'] = 'disabled'
+		# self.create_file_button['state'] = 'disabled'
+		# self.connect_button['state'] = 'disabled'
+		###################################################################################################	
 
 
 	def analysis_clicked(self):
-		self.quanti_labelframe.place_forget()
+		try:
+			self.quanti_labelframe.place_forget()
+		except:
+			pass
 
 		self.screening_button['state'] = 'normal'
 		self.view_result_button['state'] = 'normal'
@@ -10020,5 +10027,5 @@ class MainWindow(Tk):
 ############################################### GUI DESIGN _ END #################################################
 if __name__ == "__main__":
 	app = MainWindow()
-	app.attributes('-topmost',True)
+	app.attributes('-topmost', True)
 	app.mainloop()
