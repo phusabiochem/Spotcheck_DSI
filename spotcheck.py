@@ -4608,7 +4608,7 @@ class QuantitativeAnalysisFrame3(QualitativeAnalysisFrame3):
 			value3_text_label.grid(row=4, column=0, padx=3, pady=8)
 			ct3_text_label = Label(self.annotate_result_frame, font=("Arial", 9), bg=POSITIVE_COLOR, width=12, text="29-32", height=2)
 			ct3_text_label.grid(row=4, column=1, padx=3, pady=8)
-			value4_text_label = Label(self.annotate_result_frame, font=("Arial", 9), bg=POSITIVE_COLOR, width=12, text="501-50000", height=2)
+			value4_text_label = Label(self.annotate_result_frame, font=("Arial", 9), bg=POSITIVE_COLOR, width=12, text="5001-50000", height=2)
 			value4_text_label.grid(row=5, column=0, padx=3, pady=8)
 			ct4_text_label = Label(self.annotate_result_frame, font=("Arial", 9), bg=POSITIVE_COLOR, width=12, text="26-28", height=2)
 			ct4_text_label.grid(row=5, column=1, padx=3, pady=8)
@@ -4713,7 +4713,7 @@ class QuantitativeAnalysisFrame3(QualitativeAnalysisFrame3):
 			img.anchor = 'B2'
 			sheet.add_image(img)
 
-			sheet["C" + str(RESULT_CELL_START-2)] = self.base_window.quantitative_analysis_0.template_name
+			sheet["B" + str(RESULT_CELL_START-2)] = self.base_window.quantitative_analysis_0.template_name
 
 			sheet.merge_cells(start_row=RESULT_CELL_START-7, start_column=2, end_row=RESULT_CELL_START-7, end_column=7)
 			sheet["B" + str(RESULT_CELL_START-7)] = Quantitative3_Language["Result Title Text"][language]
