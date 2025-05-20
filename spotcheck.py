@@ -4736,14 +4736,7 @@ class QuantitativeAnalysisFrame3(QualitativeAnalysisFrame3):
 
 			# sheet.merge_cells(start_row=RESULT_CELL_START+52, start_column=5, end_row=RESULT_CELL_START+52, end_column=7)
 			# sheet.merge_cells(start_row=RESULT_CELL_START+53, start_column=5, end_row=RESULT_CELL_START+53, end_column=7)
-			sheet['B' + str(RESULT_CELL_START+51)] = Quantitative3_Language["Result TechnicianNameSign Text"][language]
-			sheet['B' + str(RESULT_CELL_START+52)] = ''
-			sheet['E' + str(RESULT_CELL_START+51)] = Quantitative3_Language["Result HeadOfDivisionSign Text"][language]
-			sheet['E' + str(RESULT_CELL_START+52)] = ''
-			sheet["B" + str(RESULT_CELL_START+51)].font = font2
-			sheet["E" + str(RESULT_CELL_START+51)].font = font2
-			sheet["B" + str(RESULT_CELL_START+51)].protection = Protection(locked=False, hidden=False)
-			sheet["E" + str(RESULT_CELL_START+51)].protection = Protection(locked=False, hidden=False)
+
 			# sheet.cell(row=RESULT_CELL_START+52,column=2).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
 			# sheet.cell(row=RESULT_CELL_START+53,column=2).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
 			# sheet.cell(row=RESULT_CELL_START+52,column=5).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
@@ -5068,6 +5061,12 @@ class QuantitativeAnalysisFrame3(QualitativeAnalysisFrame3):
 			# Chu ky 
 			sheet.merge_cells(start_row=tmp_row_value + 4, start_column=5, end_row=tmp_row_value + 4, end_column=7)
 			sheet.merge_cells(start_row=tmp_row_value + 5, start_column=5, end_row=tmp_row_value + 5, end_column=7)
+			sheet['B' + str(tmp_row_value + 4)] = Quantitative3_Language["Result TechnicianNameSign Text"][language]
+			sheet['E' + str(tmp_row_value + 4)] = Quantitative3_Language["Result HeadOfDivisionSign Text"][language]
+			sheet["B" + str(tmp_row_value + 4)].font = font2
+			sheet["E" + str(tmp_row_value + 4)].font = font2
+			sheet["B" + str(tmp_row_value + 4)].protection = Protection(locked=False, hidden=False)
+			sheet["E" + str(tmp_row_value + 4)].protection = Protection(locked=False, hidden=False)
 			sheet.cell(row=tmp_row_value + 4,column=2).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
 			sheet.cell(row=tmp_row_value + 5,column=2).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
 			sheet.cell(row=tmp_row_value + 4,column=5).alignment = Alignment(horizontal='center',vertical='center',wrapText=True)
