@@ -5639,6 +5639,8 @@ class QuantitativeAnalysisFrame2(QualitativeAnalysisFrame2):
 					self.email_entry = Entry(self.email_label_frame, width=30, justify='right', font=('Courier',14))
 					self.email_entry.pack()
 
+					self.email_entry.insert(0, autofill_email.strip('\n'))
+
 					self.ok_button = Button(self.email_label_frame,
 								text = Quantitative2_Language["OK Button"][language],
 								font = SWITCH_PAGE_BUTTON_FONT,
@@ -5683,6 +5685,20 @@ class QuantitativeAnalysisFrame2(QualitativeAnalysisFrame2):
 			# ~ if (match == None):
 				# ~ messagebox.showerror("","Email syntax error")
 			# ~ else:
+			global autofill_email
+			autofill_email = addressToVerify
+			fw_info = open('/home/pi/Spotcheck/.oldinfo.txt', 'w')
+			fw_info.writelines(addressToVerify + '\n')
+			fw_info.writelines(autofill_user + '\n')
+			fw_info.close()
+			
+			self.recipient_email = addressToVerify
+			self.automail_is_on = 1
+			self.base_window.forget_page()
+			self.base_window.page_num = self.base_window.frame_list.index(self.base_window.qualitative_analysis_3)
+			self.base_window.switch_page()
+			self.base_window.qualitative_analysis_3.serial_handle()
+
 			self.recipient_email = addressToVerify
 			self.automail_is_on = 1
 			self.base_window.forget_page()
