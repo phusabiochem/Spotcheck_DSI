@@ -5433,82 +5433,82 @@ class QualitativeAnalysisFrame2(Frame):
 					# ~ self.id_list[i] = sheet[pos].value
 				
 				if(SC_VERSION == 48):
-					self.id_list[0] = sheet["B12"].value
-					self.id_list[1] = sheet["B20"].value
-					self.id_list[2] = sheet["B28"].value
-					self.id_list[3] = sheet["B36"].value
-					self.id_list[4] = sheet["B44"].value
-					self.id_list[5] = sheet["B52"].value
+					self.id_list[0] = sheet["B" + str(RESULT_CELL_START)].value
+					self.id_list[1] = sheet["B" + str(RESULT_CELL_START+8)].value
+					self.id_list[2] = sheet["B" + str(RESULT_CELL_START+16)].value
+					self.id_list[3] = sheet["B" + str(RESULT_CELL_START+24)].value
+					self.id_list[4] = sheet["B" + str(RESULT_CELL_START+32)].value
+					self.id_list[5] = sheet["B" + str(RESULT_CELL_START+40)].value
 
-					self.id_list[6] = sheet["B13"].value
-					self.id_list[7] = sheet["B21"].value
-					self.id_list[8] = sheet["B29"].value
-					self.id_list[9] = sheet["B37"].value
-					self.id_list[10] = sheet["B45"].value
-					self.id_list[11] = sheet["B53"].value
+					self.id_list[6] = sheet["B" + str(RESULT_CELL_START+1)].value
+					self.id_list[7] = sheet["B" + str(RESULT_CELL_START+9)].value
+					self.id_list[8] = sheet["B" + str(RESULT_CELL_START+17)].value
+					self.id_list[9] = sheet["B" + str(RESULT_CELL_START+25)].value
+					self.id_list[10] = sheet["B" + str(RESULT_CELL_START+33)].value
+					self.id_list[11] = sheet["B" + str(RESULT_CELL_START+41)].value
 					
-					self.id_list[12] = sheet["B14"].value
-					self.id_list[13] = sheet["B22"].value
-					self.id_list[14] = sheet["B30"].value
-					self.id_list[15] = sheet["B38"].value
-					self.id_list[16] = sheet["B46"].value
-					self.id_list[17] = sheet["B54"].value
+					self.id_list[12] = sheet["B" + str(RESULT_CELL_START+2)].value
+					self.id_list[13] = sheet["B" + str(RESULT_CELL_START+10)].value
+					self.id_list[14] = sheet["B" + str(RESULT_CELL_START+18)].value
+					self.id_list[15] = sheet["B" + str(RESULT_CELL_START+26)].value
+					self.id_list[16] = sheet["B" + str(RESULT_CELL_START+34)].value
+					self.id_list[17] = sheet["B" + str(RESULT_CELL_START+42)].value
 					
-					self.id_list[18] = sheet["B15"].value
-					self.id_list[19] = sheet["B23"].value
-					self.id_list[20] = sheet["B31"].value
-					self.id_list[21] = sheet["B39"].value
-					self.id_list[22] = sheet["B47"].value
-					self.id_list[23] = sheet["B55"].value
+					self.id_list[18] = sheet["B" + str(RESULT_CELL_START+3)].value
+					self.id_list[19] = sheet["B" + str(RESULT_CELL_START+11)].value
+					self.id_list[20] = sheet["B" + str(RESULT_CELL_START+19)].value
+					self.id_list[21] = sheet["B" + str(RESULT_CELL_START+27)].value
+					self.id_list[22] = sheet["B" + str(RESULT_CELL_START+35)].value
+					self.id_list[23] = sheet["B" + str(RESULT_CELL_START+43)].value
 					
-					self.id_list[24] = sheet["B16"].value
-					self.id_list[25] = sheet["B24"].value
-					self.id_list[26] = sheet["B32"].value
-					self.id_list[27] = sheet["B40"].value
-					self.id_list[28] = sheet["B48"].value
-					self.id_list[29] = sheet["B56"].value
+					self.id_list[24] = sheet["B" + str(RESULT_CELL_START+4)].value
+					self.id_list[25] = sheet["B" + str(RESULT_CELL_START+12)].value
+					self.id_list[26] = sheet["B" + str(RESULT_CELL_START+20)].value
+					self.id_list[27] = sheet["B" + str(RESULT_CELL_START+28)].value
+					self.id_list[28] = sheet["B" + str(RESULT_CELL_START+36)].value
+					self.id_list[29] = sheet["B" + str(RESULT_CELL_START+44)].value
 					
-					self.id_list[30] = sheet["B17"].value
-					self.id_list[31] = sheet["B25"].value
-					self.id_list[32] = sheet["B33"].value
-					self.id_list[33] = sheet["B41"].value
-					self.id_list[34] = sheet["B49"].value
-					self.id_list[35] = sheet["B57"].value
+					self.id_list[30] = sheet["B" + str(RESULT_CELL_START+5)].value
+					self.id_list[31] = sheet["B" + str(RESULT_CELL_START+13)].value
+					self.id_list[32] = sheet["B" + str(RESULT_CELL_START+21)].value
+					self.id_list[33] = sheet["B" + str(RESULT_CELL_START+29)].value
+					self.id_list[34] = sheet["B" + str(RESULT_CELL_START+37)].value
+					self.id_list[35] = sheet["B" + str(RESULT_CELL_START+45)].value
 					
-					self.id_list[36] = sheet["B18"].value
-					self.id_list[37] = sheet["B26"].value
-					self.id_list[38] = sheet["B34"].value
-					self.id_list[39] = sheet["B42"].value
-					self.id_list[40] = sheet["B50"].value
-					self.id_list[41] = sheet["B58"].value
+					self.id_list[36] = sheet["B" + str(RESULT_CELL_START+6)].value
+					self.id_list[37] = sheet["B" + str(RESULT_CELL_START+14)].value
+					self.id_list[38] = sheet["B" + str(RESULT_CELL_START+22)].value
+					self.id_list[39] = sheet["B" + str(RESULT_CELL_START+30)].value
+					self.id_list[40] = sheet["B" + str(RESULT_CELL_START+38)].value
+					self.id_list[41] = sheet["B" + str(RESULT_CELL_START+46)].value
 					
-					self.id_list[42] = sheet["B19"].value
-					self.id_list[43] = sheet["B27"].value
-					self.id_list[44] = sheet["B35"].value
-					self.id_list[45] = sheet["B43"].value
-					self.id_list[46] = sheet["B51"].value
-					self.id_list[47] = sheet["B59"].value
+					self.id_list[42] = sheet["B" + str(RESULT_CELL_START+7)].value
+					self.id_list[43] = sheet["B" + str(RESULT_CELL_START+15)].value
+					self.id_list[44] = sheet["B" + str(RESULT_CELL_START+23)].value
+					self.id_list[45] = sheet["B" + str(RESULT_CELL_START+31)].value
+					self.id_list[46] = sheet["B" + str(RESULT_CELL_START+39)].value
+					self.id_list[47] = sheet["B" + str(RESULT_CELL_START+47)].value
 				
 				else:
-					self.id_list[0] = sheet["B12"].value
-					self.id_list[1] = sheet["B16"].value
-					self.id_list[2] = sheet["B20"].value
-					self.id_list[3] = sheet["B24"].value
+					self.id_list[0] = sheet["B" + str(RESULT_CELL_START)].value
+					self.id_list[1] = sheet["B" + str(RESULT_CELL_START+4)].value
+					self.id_list[2] = sheet["B" + str(RESULT_CELL_START+8)].value
+					self.id_list[3] = sheet["B" + str(RESULT_CELL_START+12)].value
 					
-					self.id_list[4] = sheet["B13"].value
-					self.id_list[5] = sheet["B17"].value
-					self.id_list[6] = sheet["B21"].value
-					self.id_list[7] = sheet["B25"].value
+					self.id_list[4] = sheet["B" + str(RESULT_CELL_START+1)].value
+					self.id_list[5] = sheet["B" + str(RESULT_CELL_START+5)].value
+					self.id_list[6] = sheet["B" + str(RESULT_CELL_START+9)].value
+					self.id_list[7] = sheet["B" + str(RESULT_CELL_START+13)].value
 
-					self.id_list[8] = sheet["B14"].value
-					self.id_list[9] = sheet["B18"].value
-					self.id_list[10] = sheet["B22"].value
-					self.id_list[11] = sheet["B26"].value
+					self.id_list[8] = sheet["B" + str(RESULT_CELL_START+2)].value
+					self.id_list[9] = sheet["B" + str(RESULT_CELL_START+6)].value
+					self.id_list[10] = sheet["B" + str(RESULT_CELL_START+10)].value
+					self.id_list[11] = sheet["B" + str(RESULT_CELL_START+14)].value
 
-					self.id_list[12] = sheet["B15"].value
-					self.id_list[13] = sheet["B19"].value
-					self.id_list[14] = sheet["B23"].value
-					self.id_list[15] = sheet["B27"].value
+					self.id_list[12] = sheet["B" + str(RESULT_CELL_START+3)].value
+					self.id_list[13] = sheet["B" + str(RESULT_CELL_START+7)].value
+					self.id_list[14] = sheet["B" + str(RESULT_CELL_START+11)].value
+					self.id_list[15] = sheet["B" + str(RESULT_CELL_START+15)].value
 
 				tmp = 0
 				for i in range(len(path)):
