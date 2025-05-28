@@ -5669,8 +5669,6 @@ class QualitativeAnalysisFrame2(Frame):
 			self.base_window.switch_page()
 			self.base_window.qualitative_analysis_3.serial_handle()
 			
-			
-	
 
 	def cancel_clicked(self):
 		self.email_label_frame.place_forget()
@@ -5946,13 +5944,6 @@ class QuantitativeAnalysisFrame2(QualitativeAnalysisFrame2):
 			fw_info.writelines(addressToVerify + '\n')
 			fw_info.writelines(autofill_user + '\n')
 			fw_info.close()
-			
-			self.recipient_email = addressToVerify
-			self.automail_is_on = 1
-			self.base_window.forget_page()
-			self.base_window.page_num = self.base_window.frame_list.index(self.base_window.qualitative_analysis_3)
-			self.base_window.switch_page()
-			self.base_window.qualitative_analysis_3.serial_handle()
 
 			self.recipient_email = addressToVerify
 			self.automail_is_on = 1
